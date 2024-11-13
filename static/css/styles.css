@@ -1,0 +1,128 @@
+/* Body and Overall Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #004080;
+    color: #fff;
+}
+
+.header-text h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.header-text p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.logo {
+    width: 80px;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #004080;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+button:active {
+    background-color: #002244;
+}
+
+/* Table Styling */
+#timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#timetable th, #timetable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#timetable th {
+    background-color: #004080;
+    color: #ffffff;
+}
+
+#timetable td {
+    background-color: #f9f9f9;
+}
+
+.special {
+    background-color: #e9ecef;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Dropdown and Input Container Styling */
+#genetic-params {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f4ff;
+    border: 1px solid #004080;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    header, main, #timetable {
+        padding: 10px;
+    }
+
+    .header-text h1 {
+        font-size: 1.5em;
+    }
+}

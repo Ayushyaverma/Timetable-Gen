@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Timetable</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- DIAT Logo with Link -->
+        <a href="https://www.diat.ac.in/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Defence_Institute_of_Advanced_Technology.png" alt="DIAT Logo" class="logo">
+        </a>
+    
+        <!-- Header Text -->
+        <div class="header-text">
+            <h1>Intelligent Algorithm CE 602 Presentation</h1>
+            <p>Presented to Prof. CRS Kumar</p>
+            <p>Presented by</p>
+            <p>Lt. Col. Manoj Seth, Lt. Col. Balwinder Jeet Singh, Lt. Col. Anshul Verma, Ayushya Verma</p>
+        </div>
+    
+        <!-- DRDO Logo with Link -->
+        <a href="https://www.drdo.gov.in/" target="_blank">
+            <img src="https://drdo.gov.in/drdo/sites/default/files/inline-images/DRDO_Logo.png" alt="DRDO Logo" class="logo">
+        </a>
+    </header>
+    
+    <main>
+        <h2>Generated Timetable</h2>
+        <div id="timetable-container">
+            <table id="timetable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>9:00-10:00</th>
+                        <th>10:00-11:00</th>
+                        <th>11:00-12:00</th>
+                        <th>12:00-13:00</th>
+                        <th>13:00-14:00</th>
+                        <th>14:00-15:00</th>
+                        <th>15:00-16:00</th>
+                        <th>16:00-17:00</th>
+                        <th>17:00-18:00</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="metrics">
+            <!-- Metrics populated by JavaScript -->
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/output.js') }}"></script>
+</body>
+</html>
