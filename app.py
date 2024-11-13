@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import pandas as pd
 from algorithms.genetic_algorithm_module import genetic_algorithm
-from algorithms.dynamic_programming_module import dynamic_programming
-from algorithms.greedy_algorithm_module import greedy_algorithm
 
 app = Flask(__name__)
 
@@ -21,20 +19,20 @@ def output_page():
 @app.route('/generate_timetable', methods=['POST'])
 def generate_timetable():
     data = request.get_json()
+
     subjects = pd.DataFrame(data['subjects'])
     faculty = pd.DataFrame(data['faculty'])
     classrooms = pd.DataFrame(data['classrooms'])
-    algorithm = data.get('algorithm', 'genetic')
 
-    if algorithm == 'genetic':
-        params = data.get('params', {})
-        final_schedule, metrics = genetic_algorithm(subjects, faculty, classrooms, params)
-    elif algorithm == 'dynamic':
-        final_schedule, metrics = dynamic_programming(subjects, faculty, classrooms)
-    elif algorithm == 'greedy':
-        final_schedule, metrics = greedy_algorithm(subjects, faculty, classrooms)
-    else:
-        return jsonify({"error": "Invalid algorithm selected"}), 400
+    # Create mappings and constraints
+    faculty_subject_map = {entry['subject_name']: entry['faculty_name'] for entry in data['subjects']}
+    max_lectures_per_faculty = {entry['faculty_name']: entry['max_lectures'] for entry in data['faculty']}
+    
+    # Empty params dictionary or specify parameters as needed
+    params = {}
+
+    # Generate the timetable using genetic algorithm
+    final_schedule, metrics = genetic_algorithm(subjects, faculty, classrooms, faculty_subject_map, max_lectures_per_faculty, params)
 
     return jsonify({"schedule": final_schedule, "metrics": metrics})
 

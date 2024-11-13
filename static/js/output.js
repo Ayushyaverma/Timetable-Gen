@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const data = JSON.parse(localStorage.getItem('timetableData'));
-    displaySchedule(data.schedule);
-    displayMetrics(data.metrics);
+    if (data) {
+        displaySchedule(data.schedule);  // Ensure data.schedule is passed here
+        displayMetrics(data.metrics);    // Optional: Only if you have metrics to display
+    } else {
+        console.error("No timetable data found in localStorage.");
+    }
 });
 
 function displaySchedule(schedule) {
@@ -14,17 +18,25 @@ function displaySchedule(schedule) {
         dayCell.textContent = day;
         row.appendChild(dayCell);
 
-        if (schedule[day]) {
+        if (day === "Saturday" || day === "Sunday") {
+            const holidayCell = document.createElement('td');
+            holidayCell.textContent = "Holiday";
+            holidayCell.colSpan = 9;  // Span across all time slots
+            holidayCell.classList.add('holiday');
+            row.appendChild(holidayCell);
+        } else {
             schedule[day].forEach(slot => {
                 const cell = document.createElement('td');
-                if (slot === "Holiday" || slot === "Break") {
-                    cell.textContent = slot;
+                if (slot === "Break") {
+                    cell.textContent = "Break";
                     cell.classList.add('special');
+                } else if (slot === "Free Period") {
+                    cell.textContent = "Free Period";
                 } else {
                     cell.innerHTML = `
                         <strong>${slot.subject}</strong><br>
-                        ${slot.faculty}<br>
-                        ${slot.classroom}
+                        Faculty: ${slot.faculty}<br>
+                        Classroom: ${slot.classroom}
                     `;
                 }
                 row.appendChild(cell);
@@ -32,12 +44,4 @@ function displaySchedule(schedule) {
         }
         tbody.appendChild(row);
     });
-}
-
-function displayMetrics(metrics) {
-    document.getElementById('metrics').innerHTML = `
-        <p>Time taken: ${metrics.time} seconds</p>
-        <p>Generations: ${metrics.generations || 'N/A'}</p>
-        <p>Constraint Satisfaction: ${metrics.constraint_satisfaction || 'N/A'}</p>
-    `;
 }

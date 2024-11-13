@@ -3,79 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable Input - DRDO Styled</title>
+    <title>Timetable Input</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
-        <!-- DIAT Logo with Link -->
         <a href="https://www.diat.ac.in/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Defence_Institute_of_Advanced_Technology.png" alt="DIAT Logo" class="logo">
         </a>
-    
-        <!-- Header Text -->
         <div class="header-text">
             <h1>Intelligent Algorithm CE 602 Presentation</h1>
             <p>Presented to Prof. CRS Kumar</p>
             <p>Presented by</p>
             <p>Lt. Col. Manoj Seth, Lt. Col. Balwinder Jeet Singh, Lt. Col. Anshul Verma, Ayushya Verma</p>
         </div>
-    
-        <!-- DRDO Logo with Link -->
         <a href="https://www.drdo.gov.in/" target="_blank">
             <img src="https://drdo.gov.in/drdo/sites/default/files/inline-images/DRDO_Logo.png" alt="DRDO Logo" class="logo">
         </a>
     </header>
-    
 
     <main>
-        <h2>Configure and Generate Timetable</h2>
-        <p>Please select an algorithm and enter the required details to generate a timetable.</p>
-        
+        <h2>Enter Timetable Information</h2>
         <form id="custom-input-form">
-            <h3>Select Algorithm</h3>
-            <select id="algorithm" name="algorithm">
-                <option value="genetic">Genetic Algorithm</option>
-                <option value="dynamic">Dynamic Programming</option>
-                <option value="greedy">Greedy Algorithm</option>
-            </select>
-
-            <div id="genetic-params" style="display: none;">
-                <label for="population_size">Population Size:</label>
-                <input type="number" id="population_size" name="population_size" placeholder="e.g., 10">
-                
-                <label for="mutation_rate">Mutation Rate:</label>
-                <input type="number" step="0.01" id="mutation_rate" name="mutation_rate" placeholder="e.g., 0.01">
-                
-                <label for="generations">Generations:</label>
-                <input type="number" id="generations" name="generations" placeholder="e.g., 100">
-            </div>
-
-            <h3>Enter Faculty</h3>
+            <h3>Enter Faculty and Maximum Lectures</h3>
             <div id="faculty-container">
                 <div class="faculty-entry">
                     <input type="text" name="faculty_name" placeholder="Faculty Name" required>
-                    <button type="button" onclick="addFaculty()">Add Another Faculty</button>
+                    <input type="number" name="max_lectures" placeholder="Max Lectures" min="1" required>
                 </div>
+                <button type="button" onclick="addFaculty()">Add Another Faculty</button>
             </div>
 
-            <h3>Enter Subjects and Assign Faculty</h3>
+            <h3>Enter Subjects</h3>
             <div id="subjects-container">
                 <div class="subject-entry">
                     <input type="text" name="subject_name" placeholder="Subject Name" required>
                     <select name="faculty_for_subject">
                         <option value="">Select Faculty</option>
                     </select>
-                    <button type="button" onclick="addSubject()">Add Another Subject</button>
                 </div>
+                <button type="button" onclick="addSubject()">Add Another Subject</button>
             </div>
 
             <h3>Enter Classrooms</h3>
             <div id="classrooms-container">
                 <div class="classroom-entry">
                     <input type="text" name="classroom_name" placeholder="Classroom Name" required>
-                    <button type="button" onclick="addClassroom()">Add Another Classroom</button>
                 </div>
+                <button type="button" onclick="addClassroom()">Add Another Classroom</button>
             </div>
 
             <button type="button" id="generate-btn">Generate Timetable</button>
