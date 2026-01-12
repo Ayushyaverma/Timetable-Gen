@@ -1,157 +1,133 @@
-Timetable-Gen
 
-Timetable-Gen is a lightweight, Python-based timetable generation web application built with Flask. It enables users to generate optimized class schedules based on provided inputs such as courses, instructors, days, and time slots.
 
-This project aims to automate the manual process of creating academic timetables while respecting constraints such as no class overlaps and balanced distributions.
+# Timetable-Gen
 
-Features
+**Timetable-Gen** is a Flask-based Python web application that automates the generation of academic timetables. It is designed to reduce the manual effort involved in scheduling classes by producing structured weekly timetables through a simple web interface.
 
-Simple web interface powered by Flask
+The project focuses on clarity, simplicity, and extensibility, making it suitable for academic demonstrations, small institutions, and further research or optimization work.
 
-Generates weekly timetables automatically
+---
 
-User-provided inputs for courses, instructors, and availability
+## Features
+- **Web-based generation:** Interactive interface using Flask.
+- **Simple UI:** Clean and intuitive user design.
+- **Automation:** Automatic creation of weekly schedules.
+- **Modular Backend:** Python logic separated for easy maintenance.
+- **Extensible:** Easy to add additional constraints or logic.
 
-Modular Python backend for scheduling logic
+---
 
-Easily extensible for additional rules and constraints
+## Live Demo
+Check out the live application here:
+[https://timetable-gen-three.vercel.app](https://timetable-gen-three.vercel.app)
 
-Demo
+---
 
-You can view a live deployment here (if hosted):
+## Technology Stack
+- **Language:** Python
+- **Framework:** Flask
+- **Frontend:** HTML / CSS
+- **Templating:** Jinja2
 
-https://timetable-gen-three.vercel.app
+---
 
-Screenshots
+## Project Structure
 
-Place screenshots here if available (e.g., timetable output, input form, homepage)
 
-Getting Started
+Timetable-Gen/
+│
+├── app.py                # Flask application entry point
+├── requirements.txt      # Project dependencies
+├── templates/            # HTML templates
+├── static/               # Static assets (CSS, etc.)
+├── images/               # Screenshots or assets
+└── README.md             # Project documentation
 
-Follow the instructions below to get the project running on your local machine.
+##Setup Instructions
+#Prerequisites
 
-Prerequisites
+    Python 3.8 or higher
 
-Ensure you have the following installed:
+    pip package manager
 
-Python 3.8 or newer
+#Installation
 
-pip package manager
+    Clone the repository
+    Bash
 
-(Optional) Virtual environment tool (venv, virtualenv, etc.)
-
-Installation
-
-Clone the repository
-
-git clone https://github.com/Ayushyaverma/Timetable-Gen.git
+git clone [https://github.com/Ayushyaverma/Timetable-Gen.git](https://github.com/Ayushyaverma/Timetable-Gen.git)
 cd Timetable-Gen
 
+(Optional) Create a virtual environment
+Bash
 
-Create and activate a Python virtual environment
+python -m venv venv
 
-python3 -m venv venv
-source venv/bin/activate      # Linux / macOS
-venv\Scripts\activate         # Windows
+# Linux / macOS
+source venv/bin/activate
 
+# Windows
+venv\Scripts\activate
 
-Install dependencies
-
-pip install -r requirements.txt
-
-Configuration
-
-If your app uses configuration (e.g., environment variables), document them here. For example:
-
-export FLASK_APP=app.py
-export FLASK_ENV=development
-
-
-(Adjust variable names/values as appropriate.)
-
-Running the App
-flask run
-
-
-By default, the app will be available at:
-
-http://127.0.0.1:5000
-
-How It Works
-
-Timetable-Gen reads user input (courses, instructors, available slots, etc.) and runs a scheduling logic (Flask handler + Python scheduler code) to compute a timetable.
-The output timetable is rendered in HTML, allowing users to view a weekly schedule.
-
-(Provide a short description of your algorithm or approach here if you have one — e.g., greedy scheduler, constraint solver, etc.)
-
-Project Structure
-
-Here is an overview of the main directories and files:
-
-.
-├── app.py                  # Flask application entrypoint
-├── requirements.txt        # Python dependencies
-├── templates/              # HTML templates for rendering pages
-├── static/                 # Static assets (CSS / JS)
-├── utils/                  # Helper modules for scheduling logic
-├── images/                 # Project images / screenshots
-─ README.md
-
-Dependencies
-
-All Python dependencies are listed in requirements.txt. Typical packages include:
-
-Flask
-Flask-WTForms (if used)
-Jinja2
-… (add any specific scheduling libs here)
-
-
-Install them via:
+#Install dependencies
+Bash
 
 pip install -r requirements.txt
 
-Usage Examples
+#Run the application
+Bash
 
-(Optional — add example screenshots or sample inputs here)
+    python app.py
 
-Navigate to the home page.
+    Access the App Open your browser and visit: http://127.0.0.1:5000
 
-Enter course details and availability.
+#Application Flow
 
-Click “Generate Timetable”.
+    Input: User provides timetable-related inputs through the web interface.
 
-View the generated schedule.
+    Process: Backend logic processes the inputs.
 
-Contributing
+    Generation: A timetable is generated without basic conflicts.
 
-Contributions are welcome! To contribute:
+    Output: The result is rendered dynamically using HTML templates.
 
-Fork the project
+#Use Cases
 
-Create your feature branch:
+    Academic timetable generation.
 
-git checkout -b feature/awesome-feature
+    Flask-based project demonstrations.
 
+    Learning resource for Python web development.
 
-Commit your changes:
+    Base project for optimization or scheduling research.
 
-git commit -m "Add some awesome feature"
+#Future Scope
 
+    Advanced constraint handling.
 
-Push to the branch:
+    Database integration.
 
-git push origin feature/awesome-feature
+    Export timetable as PDF or Excel.
 
+    Authentication and role-based access.
 
-Open a Pull Request on GitHub
+    Improved scheduling algorithms.
 
-Please include clear descriptions of changes and reference any relevant issues.
+##Contributing
 
-License
+#Contributions are welcome!
 
-This project is released under the MIT License. See LICENSE for details.
+    Fork the repository.
 
-Acknowledgements
+    Create a new branch.
 
-This project draws inspiration from other timetable generator projects and scheduling algorithms on GitHub. See related projects under the timetable-generator topic for ideas and implementation patterns.
+    Commit your changes.
+
+    Submit a pull request.
+
+#License
+
+This project is licensed under the MIT License.
+Author
+
+##Ayushya Verma GitHub: https://github.com/Ayushyaverma
