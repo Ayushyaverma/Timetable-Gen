@@ -44,13 +44,13 @@ Timetable-Gen/
 └── README.md             # Project documentation
 
 ## Setup Instructions
-# Prerequisites
+### Prerequisites
 
     Python 3.8 or higher
 
     pip package manager
 
-# Installation
+### Installation
 
     Clone the repository
     Bash
@@ -63,25 +63,25 @@ Bash
 
 python -m venv venv
 
-# Linux / macOS
+### Linux / macOS
 source venv/bin/activate
 
-# Windows
+### Windows
 venv\Scripts\activate
 
-# Install dependencies
+### Install dependencies
 Bash
 
 pip install -r requirements.txt
 
-# Run the application
+### Run the application
 Bash
 
     python app.py
 
     Access the App Open your browser and visit: http://127.0.0.1:5000
 
-# Application Flow
+### Application Flow
 
     Input: User provides timetable-related inputs through the web interface.
 
@@ -91,7 +91,7 @@ Bash
 
     Output: The result is rendered dynamically using HTML templates.
 
-# Use Cases
+### Use Cases
 
     Academic timetable generation.
 
@@ -115,7 +115,7 @@ Bash
 
 ## Contributing
 
-# Contributions are welcome!
+### Contributions are welcome!
 
     Fork the repository.
 
@@ -127,7 +127,7 @@ Bash
 
 ## License
 
-# This project is licensed under the MIT License.
+#### This project is licensed under the MIT License.
 ## Author
 
-## Ayushya Verma GitHub: https://github.com/Ayushyaverma
+### Ayushya Verma GitHub: https://github.com/Ayushyaverma
